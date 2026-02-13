@@ -97,28 +97,28 @@ public class McmmoListeners implements Listener {
 		}
 	}
 
-	@EventHandler
-	private void entityDamageByEntityEvent(FakeEntityDamageByEntityEvent event) {
-		if (!Config.mcmmoUseSkills) {
-			Entity damager = event.getDamager();
-			Entity victim = event.getEntity();
-			if (playerManager.hasPlayerData(damager.getUniqueId()) || playerManager.hasPlayerData(victim.getUniqueId())) {
-				event.setCancelled(true);
-			}
-		}
-	}
+	// @EventHandler
+	// private void entityDamageByEntityEvent(FakeEntityDamageByEntityEvent event) {
+	// 	if (!Config.mcmmoUseSkills) {
+	// 		Entity damager = event.getDamager();
+	// 		Entity victim = event.getEntity();
+	// 		if (playerManager.hasPlayerData(damager.getUniqueId()) || playerManager.hasPlayerData(victim.getUniqueId())) {
+	// 			event.setCancelled(true);
+	// 		}
+	// 	}
+	// }
 
-	@EventHandler
-	private void entityDamageEvent(FakeEntityDamageEvent event) {
-		if (!Config.mcmmoUseSkills) {
-			if (event.getEntity() instanceof Player) {
-				Player player = ((Player) event.getEntity());
-				if (playerManager.hasPlayerData(player.getUniqueId())) {
-					event.setCancelled(true);
-				}
-			}
-		}
-	}
+	// @EventHandler
+	// private void entityDamageEvent(FakeEntityDamageEvent event) {
+	// 	if (!Config.mcmmoUseSkills) {
+	// 		if (event.getEntity() instanceof Player) {
+	// 			Player player = ((Player) event.getEntity());
+	// 			if (playerManager.hasPlayerData(player.getUniqueId())) {
+	// 				event.setCancelled(true);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	@EventHandler
 	private void fishEvent(FakePlayerFishEvent event) {
